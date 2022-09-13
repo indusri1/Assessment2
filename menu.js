@@ -31,6 +31,17 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'cheese',
+    price: 20,
+    category: 'entree',
+    popularity: 9,
+    rating: 5,
+    tags: ['crispy', 'gluten-free', 'vegan'],
+
+}
+
+console.log(pizza);
 
 
 
@@ -44,6 +55,8 @@
 
 //CODE HERE
 
+console.log(pizza.popularity);
+
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +66,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,7 +76,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza;
+console.log(`${price}`);
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +87,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +104,59 @@
 
 //CODE HERE
 
+const foodArr = [
+    { 
+        name: 'veggie',
+        price: 25,
+        category: 'appetizer',
+        popularity: 10,
+        rating: 4.9,
+        tags: ['thin-crust', 'kids', 'spicy'],
 
+    },
+
+    { 
+        name: 'tomato',
+        price: 18,
+        category: 'appetizer',
+        popularity: 7,
+        rating: 4.5,
+        tags: ['cheesy-crust', 'crispy', 'spicy'],
+
+    },
+
+    { 
+        name: 'chicago',
+        price: 30,
+        category: 'appetizer',
+        popularity: 10,
+        rating: 5,
+        tags: ['deep-dish', 'baked', 'spicy'],
+
+    },
+
+    { 
+        name: 'new york',
+        price: 26,
+        category: 'entree',
+        popularity: 10,
+        rating: 5.5,
+        tags: ['spicy', 'fire-baked', 'crispy'],
+
+    },
+
+    { 
+        name: 'stuffed garlic crust pizza',
+        price: 28,
+        category: 'entree',
+        popularity: 9.9,
+        rating: 4.7,
+        tags: ['baked', 'vegan', 'hot'],
+
+    },
+]
+
+console.log(foodArr);
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,7 +172,11 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((foodTags) => {
+    return foodTags.tags.includes("hot")
+})
+
+console.log(filteredFood);
 
 
 
@@ -148,7 +219,16 @@
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+function filterByProperty(property, number, type){
+    const filteredArr = foodArr.filter(function(element){
+        if (element.length === 'above'){
+            return property > number
+        } else if (type != 'below'){
+            return (property > number)
+        }
+    return filteredArr
+    })
+}
 
 
 /*
@@ -159,3 +239,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 5, 'above'))

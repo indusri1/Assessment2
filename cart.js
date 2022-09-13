@@ -36,6 +36,8 @@ const cart = [
 //CODE HERE
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, cur) => acc  + cur.price, 0);
+console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,7 +57,12 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = ((cartTotal,couponValue, tax) => {
+    return ((cartTotal + (cartTotal * tax)) - couponValue)
 
+})
+
+console.log(calcFinalPrice(100, 5, 0.07));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +86,11 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    
+    name: Should be able to greet the costomer for a good costomer service experience. This will be a string
+    item: Need to know what the customer wants. This will also be a string
+    price: Need to know the price to sell the item and run the business. This will be a number
+    tax: Need to know the tax so that the government can get paid the tax price for the sellign unit. This will be a number
 
 */
 
@@ -88,3 +100,9 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: 'Peter',
+    Item: 'Water',
+    price: 4,
+    tax: 1, 
+}
